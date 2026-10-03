@@ -1,0 +1,11 @@
+# Dependensi & hasil build (mulai dipakai saat React)
+node_modules/
+dist/
+
+# Rahasia — jangan pernah di-commit
+.env
+.env.local
+
+# File sistem
+.DS_Store
+Thumbs.db
