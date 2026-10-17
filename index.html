@@ -2,12 +2,89 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Tugas 1A — buka Console (F12)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Study Cafe Directory in Padang</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body>
-  <p>Semua hasil ada di <strong>Console</strong>: tekan F12 → tab Console.</p>
-  <!-- Jangan ubah urutan: data.js harus dimuat sebelum logika.js -->
+<body class="bg-gray-50 text-gray-800">
+  <header>
+    <!-- flex digunakan pada navbar karena elemen hanya perlu disusun dalam satu arah. Awalnya ditumpuk dengan flex-col untuk layar HP (mobile-first), lalu disejajarkan dengan flex-row mulai layar md agar tidak sempit -->
+    <nav class="flex flex-col md:flex-row justify-between items-center px-6 py-4 bg-blue-800 text-white">
+      <a href="#" class="text-xl font-bold">Study Cafe Directory</a>
+      <div class="flex gap-4 mt-2 md:mt-0">
+        <a href="#daftar-cafe" class="hover:underline">Daftar Cafe</a>
+        <a href="#about" class="hover:underline">About</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-6 py-10">
+    <section class="mb-10">
+      <h1 class="text-3xl font-bold text-blue-900">Study Cafe Directory in Padang</h1>
+      <p class="mt-2 text-gray-600">Ini adalah direktori study cafe di Padang. Data ini diambil dari berbagai sumber untuk membantu mahasiswa menemukan tempat belajar yang nyaman.</p>
+    </section>
+
+    <section id="daftar-cafe">
+      <h2 class="text-2xl font-bold mb-6">Daftar Cafe</h2>
+      
+      <!-- grid, bukan flex: kartu harus rata dalam baris dan kolom. Dibuat mobile-first (1 kolom), lalu menjadi 2 kolom dan 3 kolom saat layar membesar -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- article dipilih daripada div karena informasi satu kartu cafe ini memiliki makna yang utuh dan tetap bisa dipahami jika berdiri sendiri -->
+        <article class="flex flex-col gap-2 p-5 bg-white border border-gray-200 rounded-lg shadow-sm">
+          <h3 class="text-lg font-semibold">Kopkit (Kopi Kita)</h3>
+          <p class="text-sm text-gray-500">Nugas</p>
+          <p class="font-bold text-blue-800">Harga Minimal: Rp 18.000</p>
+          <p class="text-sm">Lokasi: Jl. Rimbo Kaluang, Padang Barat</p>
+        </article>
+
+        <article class="flex flex-col gap-2 p-5 bg-white border border-gray-200 rounded-lg shadow-sm">
+          <h3 class="text-lg font-semibold">Dari Sini Coffee</h3>
+          <p class="text-sm text-gray-500">WFC</p>
+          <p class="font-bold text-blue-800">Harga Minimal: Rp 20.000</p>
+          <p class="text-sm">Lokasi: Jl. Dr. Moh. Hatta, Pasar Baru, Pauh (Dekat UNAND)</p>
+        </article>
+
+        <article class="flex flex-col gap-2 p-5 bg-white border border-gray-200 rounded-lg shadow-sm">
+          <h3 class="text-lg font-semibold">Menza Coffee</h3>
+          <p class="text-sm text-gray-500">Diskusi</p>
+          <p class="font-bold text-blue-800">Harga Minimal: Rp 18.000</p>
+          <p class="text-sm">Lokasi: Jl. Raden Saleh, Padang Barat</p>
+        </article>
+
+        <article class="flex flex-col gap-2 p-5 bg-white border border-gray-200 rounded-lg shadow-sm">
+          <h3 class="text-lg font-semibold">Tjuna Coffee</h3>
+          <p class="text-sm text-gray-500">Nugas</p>
+          <p class="font-bold text-blue-800">Harga Minimal: Rp 15.000</p>
+          <p class="text-sm">Lokasi: Jl. KIS Mangunsarkoro, Padang Timur</p>
+        </article>
+
+        <article class="flex flex-col gap-2 p-5 bg-white border border-gray-200 rounded-lg shadow-sm">
+          <h3 class="text-lg font-semibold">Duds Coffee</h3>
+          <p class="text-sm text-gray-500">WFC</p>
+          <p class="font-bold text-blue-800">Harga Minimal: Rp 22.000</p>
+          <p class="text-sm">Lokasi: Jl. Pasar Baru, Pauh (Dekat UNAND)</p>
+        </article>
+
+         <article class="flex flex-col gap-2 p-5 bg-white border border-gray-200 rounded-lg shadow-sm">
+          <h3 class="text-lg font-semibold">Ago Coffee</h3>
+          <p class="text-sm text-gray-500">Diskusi</p>
+          <p class="font-bold text-blue-800">Harga Minimal: Rp 18.000</p>
+          <p class="text-sm">Lokasi: Jl. Dr. Moh. Hatta, Pauh (Dekat UNAND)</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- mt-10: menggunakan margin top untuk memberi jarak luar agar footer tidak menempel dengan konten di atasnya -->
+  <footer id="about" class="mt-10 px-6 py-6 text-center text-sm text-gray-500 border-t border-gray-200">
+    <p>&copy; 2026 Study Cafe Directory in Padang. All rights reserved.</p> 
+  </footer>
+
+  <!-- Script data.js dan logika.js diletakkan di bagian akhir dalam body dan dipertahankan karena file ini tidak boleh diubah dan akan dipakai pada Pertemuan 3 -->
   <script src="data.js"></script>
   <script src="logika.js"></script>
+
 </body>
 </html>
